@@ -1,3 +1,8 @@
+/**
+ * server.js is used here to upload this react project to heroku. 
+ * server.js adds configs like port, and which file to show to heroku app. 
+ */
+
 const express = require('express');
 const favicon = require('express-favicon');
 const path = require('path');
