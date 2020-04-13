@@ -1,0 +1,39 @@
+.searchBox {
+  display: flex;
+  height: 50%;
+  width: 20vw;
+  margin: 0 10px;
+  box-shadow: inset -1px -1px 6px rgba(255, 255, 255, 1),
+              inset -1px -1px 12px rgba(255, 255, 255, 0.5),
+              inset 1px 1px 3px rgba(255, 255, 255, 0.1),
+              inset 1px 1px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+}
+
+.searchBox input {
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  padding-left: 20px;
+}
+
+.searchBox input::placeholder {
+  color: #aaa;
+  font-size: 0.88rem;
+  font-style: italic;
+}
+
+.searchBox input:focus {
+  outline: none;
+}
+
+.searchBox button {
+  background: none;
+  border: none;
+}
+
+.searchBox img {
+  height: 28px;
+  padding-right: 20px;
+}

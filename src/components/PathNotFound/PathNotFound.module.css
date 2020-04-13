@@ -1,0 +1,22 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  text-align: center;
+}
+
+.mainHeading {
+  font-size: 7rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 100;
+}

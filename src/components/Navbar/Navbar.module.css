@@ -1,0 +1,27 @@
+.logo {
+  height: 64px;
+  padding-left: 10px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  background-color: #f2f3f7;
+  width: 100vw;
+  height: 80px;
+  box-shadow: -1px -1px 6px rgba(255, 255, 255, 1),
+              -1px -1px 12px rgba(255, 255, 255, 0.5),
+              inset 1px 1px 3px rgba(255, 255, 255, 0.1),
+              1px 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navItems a {
+  display: flex;
+  margin: 0 5px;
+}
