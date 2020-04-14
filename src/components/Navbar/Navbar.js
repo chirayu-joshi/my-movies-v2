@@ -1,34 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import logo from '../../assets/images/play.png';
 import styles from './Navbar.module.css';
+import Logo from '../Logo/Logo';
 import NavItem from './NavItem/NavItem';
-import SearchBox from './SearchBox/SearchBox';
+import SearchBox from '../SearchBox/SearchBox';
+import DrawerToggleButton from '../DrawerToggleButton/DrawerToggleButton';
 
-const navbar = props => {
-  return (
-    <nav className={styles.navigation}>
-      <Link to="/" className={styles.logoLink}>
-        <img
-          src={logo}
-          href="home logo"
-          className={styles.logo}
-          alt="Logo" />
-      </Link>
-      <div className={styles.navItems}>
-        <NavItem exact to="/">Home</NavItem>
-        <NavItem exact to="/trending">Trending</NavItem>
-      </div>
+const navbar = props => (
+  <nav className={styles.navigation}>
+    <Logo to="/" />
+    <div className={styles.navItems}>
+      <NavItem exact to="/">Home</NavItem>
+      <NavItem exact to="/trending">Trending</NavItem>
+    </div>
+    <div className={styles.responsive}>
       <SearchBox />
-      <div
-        className={styles.navItems}
-        style={{ position: 'absolute', right: 0, paddingRight: '20px' }}>
-        <NavItem to="/">Sign In</NavItem>
-        <NavItem to="/">Sign Up</NavItem>
-      </div>
-    </nav>
-  );
-}
+    </div>
+    <div className={styles.spacer}></div>
+    <div
+      className={styles.navItems}>
+      <NavItem exact to="/signIn">Sign In</NavItem>
+      <NavItem exact to="/signUp">Sign Up</NavItem>
+    </div>
+    <div className={styles.drawer}>
+      <DrawerToggleButton click={props.drawerClickHandler} />
+    </div>
+  </nav>
+);
 
 export default navbar;

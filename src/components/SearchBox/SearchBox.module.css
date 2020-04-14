@@ -1,12 +1,12 @@
 .searchBox {
   display: flex;
-  height: 50%;
+  height: 40px;
   width: 20vw;
   margin: 0 10px;
-  box-shadow: inset -1px -1px 6px rgba(255, 255, 255, 1),
-              inset -1px -1px 12px rgba(255, 255, 255, 0.5),
-              inset 1px 1px 3px rgba(255, 255, 255, 0.1),
-              inset 1px 1px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+              inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              inset 2px 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
 }
 
@@ -36,4 +36,15 @@
 .searchBox img {
   height: 28px;
   padding-right: 20px;
+}
+
+
+/*===================== MEDIA QUERIES =====================*/
+
+/*============= FOR MOBILE & TABLETS =============*/
+@media (max-width: 888px) {
+  .searchBox {
+    width: 95%;
+    margin-top: 10%;
+  }
 }

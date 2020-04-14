@@ -1,0 +1,14 @@
+.logo {
+  height: 64px;
+  padding-left: 10px;
+}
+
+
+/*===================== MEDIA QUERIES =====================*/
+
+/*============= FOR MOBILE & TABLETS =============*/
+@media (max-width: 888px) {
+  .logo {
+    height: 40px;
+  }
+}

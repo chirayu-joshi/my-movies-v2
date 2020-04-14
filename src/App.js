@@ -5,10 +5,23 @@ import LoadingAnimation from './components/LoadingAnimation/LoadingAnimation';
 import Navbar from './components/Navbar/Navbar';
 import Dashboard from './containers/Dashboard/Dashboard';
 import PathNotFound from './components/PathNotFound/PathNotFound';
+import SideDrawer from './components/SideDrawer/SideDrawer';
+import Backdrop from './components/Backdrop/Backdrop';
 
 class App extends Component {
   state = {
-    isLoading: true
+    isLoading: true,
+    isSideDrawerOpen: false
+  }
+
+  drawerToggleHandler = () => {
+    this.setState((prevState) => {
+      return { isSideDrawerOpen: !prevState.isSideDrawerOpen }
+    });
+  }
+
+  backdropClickHandler = () => {
+    this.setState({ isSideDrawerOpen: false });
   }
 
   componentDidMount() {
@@ -24,13 +37,21 @@ class App extends Component {
       );
     }
 
+    let backdrop = null;
+    if (this.state.isSideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />
+    }
+
     return (
       <React.Fragment>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={Dashboard} />
-          <Route render={PathNotFound} />
-        </Switch>
+          <Navbar drawerClickHandler={this.drawerToggleHandler} />
+          <SideDrawer
+            show={this.state.isSideDrawerOpen} />
+          {backdrop}
+          <Switch>
+            <Route exact path="/" component={Dashboard} />
+            <Route render={PathNotFound} />
+          </Switch>
       </React.Fragment>
     );
   }
