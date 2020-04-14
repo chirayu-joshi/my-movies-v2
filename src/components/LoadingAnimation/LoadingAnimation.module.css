@@ -4,17 +4,12 @@
   background-color: teal;
 }
 
-.loader,
-.loader:before,
-.loader:after {
+.loader, .loaderLeft, .loaderRight {
   background-color: white;
   -webkit-animation: load-animation 1s infinite ease-in-out;
   animation: load-animation 1s infinite ease-in-out;
   width: 1em;
   height: 4em;
-}
-
-.loader {
   color: white;
   position: absolute;
   top: 45%;
@@ -25,20 +20,14 @@
   animation-delay: -0.16s;
 }
 
-.loader:before,
-.loader:after {
-  position: absolute;
-  top: 0;
-  content: '';
-}
-
-.loader:before {
-  left: -1.5em;
+.loaderLeft {
   animation-delay: -0.32s;
+  left: 49%;
 }
 
-.loader:after {
-  left: 1.5em;
+.loaderRight {
+  left: 51%;
+  animation-delay: -0s;
 }
 
 /*================ KEYFRAMES ================*/
@@ -65,5 +54,16 @@
   40% {
     box-shadow: 0 -2em;
     height: 5em;
+  }
+}
+
+/*============== MEDIA QUERIES ==============*/
+@media (max-width: 888px) {
+  .loaderLeft {
+    left: 46%;
+  }
+
+  .loaderRight {
+    left: 54%;
   }
 }
