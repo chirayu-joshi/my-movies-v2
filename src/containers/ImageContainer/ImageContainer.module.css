@@ -79,6 +79,12 @@
   cursor: pointer;
 }
 
+.more {
+  text-decoration: underline;
+  color: #34CEE7;
+  cursor: pointer;
+}
+
 
 /*===================== MEDIA QUERIES =====================*/
 

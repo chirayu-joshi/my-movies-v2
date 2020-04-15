@@ -39,7 +39,7 @@ class App extends Component {
 
     let backdrop = null;
     if (this.state.isSideDrawerOpen) {
-      backdrop = <Backdrop click={this.backdropClickHandler} />
+      backdrop = <Backdrop click={this.backdropClickHandler} />;
     }
 
     return (

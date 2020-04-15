@@ -22,6 +22,8 @@ class Image extends Component {
   }
 
   render() {
+    // Only 10 words should be shown firstly
+    const shortText = this.props.desc.split(' ').splice(0, 20).join(' ');
     return (
       <Fragment>
         <div className={styles.preImage} style={{ display: this.state.isLoading ? 'flex' : 'none' }}>
@@ -36,7 +38,10 @@ class Image extends Component {
             className={styles.image}
             onLoad={this.imageLoadedHandler}
           />
-          <p className={styles.imageDetails}>{this.props.desc}</p>
+          <p className={styles.imageDetails}>
+            {shortText + ' '}
+            <span className={styles.more} onClick={() => this.props.more(this.props)}>more</span>
+          </p>
           <button onClick={this.buttonClickedHandler} className={styles.likeBtn}>
             <img src={likeImage} alt="like" />
           </button>
