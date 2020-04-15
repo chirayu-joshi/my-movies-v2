@@ -1,0 +1,227 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goToPage {
+  padding: 10px 15px;
+  border-radius: 30px;
+  margin-left: 20px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+              -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.goToInput {
+  width: 50px;
+  height: 30px;
+  margin: 0 5px;
+  background-color: #f2f3f7;
+  text-align: center;
+  border: none;
+  border-radius: 20px;
+  box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+              inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.goToInput:focus {
+  outline: none;
+}
+
+.goToBtn {
+  width: 50px;
+  height: 30px;
+  background-color: #f2f3f7;
+  margin: 0px 5px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+              -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.goToBtn:hover {
+  box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+              inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.goToBtn:focus {
+  outline: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.prev, .next {
+  border: none;
+  background-color: #f2f3f7;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+              -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              2px 2px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.prev:hover, .next:hover {
+  cursor: pointer;
+  box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+              inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.prev:focus, .next:focus {
+  outline: none;
+}
+
+.prev img, .next img {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+
+.listContainer {
+  display: flex;
+  align-items: center;
+  background-color: #f2f3f7;
+  height: 50px;
+  border-radius: 30px;
+  margin: 0 20px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+              -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.listContainer ul {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.listContainer ul li {
+  padding: 0 5px;
+}
+
+.listContainer ul li:first-child, .listContainer ul li:last-child {
+  padding: 0 20px;
+}
+
+.listContainer:hover {
+  box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+              inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.listContainer ul li:hover {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pageNumber {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  height: 50px;
+  padding: 0 20px;
+  border-radius: 30px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+              -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.pageNumber .currentPage {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #34CEE7;
+}
+
+.pageNumber .currentPage, .pageNumber .totalPages {
+  padding: 0 5px;
+}
+
+.verticalLine {
+  width: 1px;
+  height: 20px;
+  background-color: black;
+}
+
+
+/*===================== MEDIA QUERIES =====================*/
+
+/*============= FOR MOBILE & TABLETS =============*/
+@media (max-width: 888px) {
+  /*--------- Grid for container, go section & page number ---------*/
+  .navigation {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "container container"
+      "goToPage pageNumber";
+  }
+
+  .container {
+    grid-area: container;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .goToPage {
+    grid-area: goToPage;
+    justify-self: center;
+    margin-bottom: 20px;
+  }
+
+  .pageNumber {
+    grid-area: pageNumber;
+    justify-self: center;
+    margin-bottom: 20px;
+  }
+
+  /*------------------ Grid for container only ------------------*/
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "leftArrow rightArrow"
+      "listContainer listContainer";
+  }
+
+  .prev {
+    grid-area: leftArrow;
+    justify-self: end;
+    margin: 10px;
+    margin-bottom: 50px;
+  }
+
+  .next {
+    grid-area: rightArrow;
+    justify-self: start;
+    margin: 10px;
+    margin-bottom: 50px;
+  }
+
+  .listContainer {
+    grid-area: listContainer;
+  }
+}

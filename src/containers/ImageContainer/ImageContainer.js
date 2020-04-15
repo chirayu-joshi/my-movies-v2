@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import styles from './ImageContainer.module.css';
 import Spinner from '../../components/Spinner/Spinner';
@@ -23,7 +23,7 @@ class Image extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <div className={styles.preImage} style={{ display: this.state.isLoading ? 'flex' : 'none' }}>
           <div className={styles.spinnerContainer}>
             <Spinner />
@@ -41,7 +41,7 @@ class Image extends Component {
             <img src={likeImage} alt="like" />
           </button>
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

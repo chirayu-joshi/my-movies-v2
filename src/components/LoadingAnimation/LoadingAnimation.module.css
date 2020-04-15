@@ -1,16 +1,16 @@
 .loaderContainer {
   height: 100vh;
   width: 100vw;
-  background-color: teal;
+  background-color: white;
 }
 
 .loader, .loaderLeft, .loaderRight {
-  background-color: white;
+  background-color: black;
   -webkit-animation: load-animation 1s infinite ease-in-out;
   animation: load-animation 1s infinite ease-in-out;
   width: 1em;
   height: 4em;
-  color: white;
+  color: black;
   position: absolute;
   top: 45%;
   left: 50%;

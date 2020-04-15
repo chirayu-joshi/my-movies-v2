@@ -1,26 +1,53 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import axios from '../../axios';
 
 import styles from './Dashboard.module.css';
-import Image from '../ImageContainer/ImageContainer';
+import PageNavigation from '../../components/PageNavigation/PageNavigation';
+import LoadingAnimation from '../../components/LoadingAnimation/LoadingAnimation';
+import Image from '../../containers/ImageContainer/ImageContainer';
 
 class Dashboard extends Component {
   state = {
     isLoading: true,
-    moviesData: {}
+    moviesData: {},
+    pageNumber: 1
+  }
+
+  // React state doesn't update immediately if it is synchronous
+  // It happens when state has lot of data to store
+  // Use below method to prevent it. 
+  pageChangeHandler = page => {
+    this.setState({
+      isLoading: true,
+      pageNumber: page
+    }, () => {
+      axios.get('/3/discover/movie', {
+        params: {
+          page: this.state.pageNumber
+        }
+      }).then(res => {
+        this.setState({
+          isLoading: false,
+          moviesData: res.data
+        });
+        console.log(this.state.moviesData);
+      }).catch(err => {
+        console.log(err);
+      });
+    })
   }
 
   componentDidMount() {
     axios.get('/3/discover/movie', {
       params: {
-        page: 2
+        page: this.state.pageNumber
       }
     }).then(res => {
       this.setState({
         isLoading: false,
         moviesData: res.data
       });
-      // console.log(this.state.moviesData);
+      console.log(this.state.moviesData);
     }).catch(err => {
       console.log(err);
     });
@@ -29,7 +56,7 @@ class Dashboard extends Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <h1>Loading...</h1>
+        <LoadingAnimation />
       );
     }
 
@@ -50,9 +77,12 @@ class Dashboard extends Component {
     ));
 
     return (
-      <div className={styles.imagesContainer}>
-        {images}
-      </div>
+      <Fragment>
+        <div className={styles.imagesContainer}>
+          {images}
+        </div>
+        <PageNavigation data={this.state.moviesData} page={this.pageChangeHandler} />
+      </Fragment>
     );
   }
 }

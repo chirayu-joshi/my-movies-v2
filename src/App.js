@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import LoadingAnimation from './components/LoadingAnimation/LoadingAnimation';
@@ -43,7 +43,7 @@ class App extends Component {
     }
 
     return (
-      <React.Fragment>
+      <Fragment>
           <Navbar drawerClickHandler={this.drawerToggleHandler} />
           <SideDrawer
             show={this.state.isSideDrawerOpen} />
@@ -52,7 +52,7 @@ class App extends Component {
             <Route exact path="/" component={Dashboard} />
             <Route render={PathNotFound} />
           </Switch>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

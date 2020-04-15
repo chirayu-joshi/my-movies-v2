@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import styles from './SideDrawer.module.css';
 import SearchBox from '../SearchBox/SearchBox';
@@ -11,7 +11,7 @@ const sideDrawer = props => {
   }
 
   return (
-    <React.Fragment>
+    <Fragment>
       <nav className={sideDrawerStyle}>
         <SearchBox />
         <div className={styles.navItems}>
@@ -23,7 +23,7 @@ const sideDrawer = props => {
           <NavItem exact to="/signUp">Sign Up</NavItem>
         </div>
       </nav>
-    </React.Fragment>
+    </Fragment>
   );
 }
 
